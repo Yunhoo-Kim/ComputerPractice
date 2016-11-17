@@ -63,6 +63,6 @@ int main() {
 
 	WaitForSingleObject(handleA, INFINITE);
 	WaitForSingleObject(handleB, INFINITE);
-	
+//addddddd	
 	CloseHandle(handleA);
 }
