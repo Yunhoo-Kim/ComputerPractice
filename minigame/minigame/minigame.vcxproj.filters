@@ -21,6 +21,9 @@
     <ClInclude Include="Game.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="Frame.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="thread.cpp">

@@ -1,7 +1,21 @@
 #include "Game.h"
 #include "KeyEvent.h"
-using namespace std;
+#include "Frame.h"
 
+using namespace std;
+void main() {
+	try {
+		Frame *f1 = new Frame;
+		Frame *f2 = new Frame[10];
+
+		delete f1;
+		delete[] f2;
+	}
+	catch (string msg) {
+		cout << "Error msg :" << msg << endl;
+	}
+}
+/*
 Game* game = new Game();
 unsigned int __stdcall mythread(void *){
 	int i = 0;
@@ -29,4 +43,4 @@ int main(){
 	WaitForSingleObject(handleB, INFINITE);
 	//addddddd	
 	CloseHandle(handleA);
-}
+}*/
