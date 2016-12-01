@@ -5,6 +5,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <stack>
 
 using namespace std;
 class Word {
@@ -27,6 +28,14 @@ void dump(list<string> &l) {
 	}
 }
 void main() {
+	stack<int> s;
+	s.push(1);
+	s.push(2);
+	
+	while (!s.empty()) {
+		cout << s.top() << endl;
+		s.pop();
+	}
 	cout << "=======================VECTOR===========================" << endl;
 	/////vector
 	vector<int> v;
