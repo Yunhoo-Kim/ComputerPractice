@@ -1,1 +1,5 @@
-﻿
+﻿  minigame.cpp
+c:\users\konkuk\computerpractice\minigame\minigame\game.h(11): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\konkuk\computerpractice\minigame\minigame\minigame.cpp(40): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  minigame.vcxproj -> C:\Users\KONKUK\ComputerPractice\minigame\Debug\minigame.exe
+  minigame.vcxproj -> C:\Users\KONKUK\ComputerPractice\minigame\Debug\minigame.pdb (Full PDB)

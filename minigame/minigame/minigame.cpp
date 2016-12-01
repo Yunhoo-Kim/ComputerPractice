@@ -2,8 +2,120 @@
 #include "KeyEvent.h"
 #include "Frame.h"
 #include "Template.h"
+#include <vector>
+#include <list>
+#include <map>
 
 using namespace std;
+class Word {
+private:
+	string word;
+public:
+	Word(string word) {
+		this->word = word;
+	}
+	string getWord() {
+		return this->word;
+	}
+};
+void dump(list<string> &l) {
+	list<string>::iterator iter = l.begin();
+
+	while (iter != l.end()) {
+		cout << *iter << endl;
+		iter++;
+	}
+}
+void main() {
+	cout << "=======================VECTOR===========================" << endl;
+	/////vector
+	vector<int> v;
+
+	v.push_back(10);
+	v.push_back(20);
+	v.push_back(30);
+	v.insert(v.begin(), 40);
+	v.insert(v.end(), 50);
+
+	for (int i = 0; i < v.size(); i++) {
+		cout << v[i] << endl;
+	}
+
+	cout << "Access index at 1 : " << v.at(1) << endl;
+
+	v.erase(v.begin());
+	v.erase(v.end() - 1);
+
+	vector<int>::iterator iter = v.begin();
+
+	cout << "access index at 1 wit iterator : " << iter[1] << endl;
+
+	while (iter != v.end()) {
+		cout << *iter << endl;
+		iter++;
+	}
+	cout << "=======================LIST===========================" << endl;
+	//////list
+	list<string> names;
+	names.insert(names.begin(), "Konkuk");
+	names.insert(names.end(), "University");
+	names.insert(names.end(), "SCLAB");
+	names.insert(names.end(), "CSY");
+	dump(names);
+	cout << "===" << endl;
+	names.reverse();
+	dump(names);
+	cout << "=======================MAP===========================" << endl;
+	//////map
+	map<string, int> m;
+
+	m["seoul"] = 100;
+	m["daegu"] = 120;
+	m["busan"] = 200;
+
+	cout << "Train to Seoul = " << m["seoul"] << "$" << endl;
+	cout << "Train to Seoul = " << m["daegu"] << "$" << endl;
+	cout << "Train to Seoul = " << m["busan"] << "$" << endl;
+	cout << "=======================MID LIST MAP===========================" << endl;
+	//////list and map
+	map<char, list<Word>> m_2;
+
+	list<Word> aList;
+	list<Word> bList;
+
+	aList.push_back(Word("apple"));
+	aList.push_back(Word("avoid"));
+	aList.push_back(Word("appear"));
+
+
+	bList.push_back(Word("bread"));
+	bList.push_back(Word("bring"));
+	bList.push_back(Word("bow"));
+
+	m_2['a'] = aList;
+	m_2['b'] = bList;
+
+	map<char, list<Word>>::const_iterator iter_map = m_2.begin();
+
+	while (iter_map != m_2.end()) {
+		cout << iter_map->first << " : " << endl;
+		list<Word> temp = iter_map->second;
+		list<Word>::const_iterator iter_list = temp.begin();
+		
+
+		while(iter_list != temp.end()) {
+			Word word = *iter_list;
+			cout << word.getWord() << ", ";
+			iter_list++;
+		}
+		cout << "\n===" << endl;
+		iter_map++;
+	}
+
+}
+
+
+/*
 void main() {
 	ExArray<int> arr1(3);
 	ExArray<char> arr2(4);
@@ -34,7 +146,7 @@ void main() {
 	arr1.printData();
 	arr4.printData();
 }
-
+*/
 /*void main() {
 	try {
 		Frame *f1 = new Frame;
